@@ -37,7 +37,7 @@ class RotatingTorus:
         self.phi = 0.0
         self.rotation_speed = 0.003
 
-        self.light_direction = np.array([0, 0, -1])  # свет направлен из камеры
+        self.light_direction = np.array([0, 0, -1])
 
         self.generate_torus_points()
         self.animate()
@@ -82,7 +82,7 @@ class RotatingTorus:
 
     def compute_lighting(self, normal):
         dot = np.dot(normal, self.light_direction)
-        return max(0.1, min(1.0, dot))  # от 0.1 до 1.0 — минимальная яркость 10%
+        return max(0.1, min(1.0, dot))
 
     def shade_color(self, hex_color, brightness):
         hex_color = hex_color.lstrip("#")
